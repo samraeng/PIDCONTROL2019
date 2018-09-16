@@ -1,4 +1,4 @@
-
+//pid control dc motor
 #include <16F1618.h>
 #fuses NOWDT
 #device ADC=10
@@ -93,6 +93,7 @@ void main()
       set_adc_channel( 2 );
 
       value = read_adc();
+      
       if(value<100)value=100;
       if(value>400)value=400; 
       
