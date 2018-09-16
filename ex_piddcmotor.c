@@ -1,27 +1,4 @@
-/////////////////////////////////////////////////////////////////////////
-////                            EX_PID.C                             ////
-////                                                                 ////
-////  This example shows how to setup and use the PID module that    ////
-////  the PIC16F161x family of devices have.  This example uses the  ////
-////  ADC to read the current output voltage of a RC circuit, then   ////
-////  inputa the reading to the PID controller and use the PID       ////
-////  result to set the duty cycle of PWM3 to adjust the output of   ////
-////  the RC circuit.  The desired output of the RC circuit can be   ////
-////  set by the user over the RS232.                                ////
-////                                                                 ////
-////  This example will work with the PCM compiler.  A 33 KOHM       ////
-////  resistor and 10 uF capacitor were use for the RC circuit.      ////
-////  Change the device, clock, RS232 pins, PWM3 pin, and ADC        ////
-////  settings as needed for your hardware configuration.            ////
-/////////////////////////////////////////////////////////////////////////
-////        (C) Copyright 1996,2015 Custom Computer Services         ////
-//// This source code may only be used by licensed users of the CCS  ////
-//// C compiler.  This source code may only be distributed to other  ////
-//// licensed users of the CCS C compiler.  No other use,            ////
-//// reproduction or distribution is permitted without written       ////
-//// permission.  Derivative programs created using this software    ////
-//// in object code form are not restricted in any way.              ////
-/////////////////////////////////////////////////////////////////////////
+
 #include <16F1618.h>
 #fuses NOWDT
 #device ADC=10
