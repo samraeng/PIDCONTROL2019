@@ -9,7 +9,7 @@
 //#use rs232(UART1,baud=115200)
 
 #pin_select PWM3=PIN_C2
-
+///////////////////////////////////////////////
 #pin_select T5CK=PIN_C0
 
 //#include <stdlib.h>
