@@ -56,6 +56,8 @@
    unsigned int16 SetPoint;
    signed int16 K1, K2, K3;
    unsigned int16 PWMDuty;
+    unsigned int16 value;
+
 
 unsigned int16 GetTickDifference(unsigned int16 Current, unsigned int16 Previous)
 {
@@ -85,7 +87,7 @@ void main()
    //printf("\r\nK1=%ld, K2=%ld, K3=%ld", K1, K2, K3);
    
    //Setup ADC 
-   setup_adc_ports(sAN0, VSS_VDD);
+   setup_adc_ports(sAN2, VSS_VDD);
    setup_adc(ADC_CLOCK_INTERNAL);
    set_adc_channel(0);
    
@@ -111,12 +113,21 @@ void main()
    while(TRUE)
    {  //SetPoint = 30; 
       CurrentTick = get_ticks();
+      set_adc_channel( 2 );
+
+      value = read_adc();
+      if(value<100)value=100;
+      if(value>400)value=400; 
+      
+       SetPoint=value;   
+      
       
       if(GetTickDifference(CurrentTick, PIDTick) >= ((unsigned int16)TICKS_PER_SECOND / SAMPLE_FREQ))
       {
           output_toggle(pin_c7);
           
-         //ADCReading = read_adc();
+
+
          ADCReading = get_timer5();
          set_timer5(0);
          pid_get_result(SetPoint, ADCReading, &PIDOutput);
