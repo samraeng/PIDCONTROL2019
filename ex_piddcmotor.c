@@ -21,7 +21,7 @@
 #define SAMPLE_FREQ  60 //50ms sample period
 
 //Set the PID Kp, Ki and Kd values
-#define KP_VALUE  2
+#define KP_VALUE  5
 #define KI_VALUE  25
 #define KD_VALUE 0
 
@@ -125,17 +125,6 @@ void main()
          
          PIDTick = CurrentTick;
       }
-      
-      /*if(kbhit())
-      {
-         c = toupper(getc());
-         
-         if(c == 'S')
-         {
-            printf("\r\nNew Set Point (0-5V): ");
-            
-            SetPoint = (unsigned int16)(get_float() * 1000) / 5;
-         }
-      }*/
+ 
    }
 }  
