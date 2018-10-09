@@ -18,11 +18,11 @@
 #use timer(timer=2, tick=1ms, bits=16, ISR)
 
 //Set the sample frequency
-#define SAMPLE_FREQ  60 //50ms sample period
+#define SAMPLE_FREQ  700 //50ms sample period
 
 //Set the PID Kp, Ki and Kd values
-#define KP_VALUE  5
-#define KI_VALUE  25
+#define KP_VALUE  20
+#define KI_VALUE  50
 #define KD_VALUE 0
 
 int8 trisc;
@@ -101,7 +101,7 @@ void main()
 
       value = read_adc();
       
-      if(value<100)value=100;
+      if(value<5)value=5;
       if(value>400)value=400; 
       
        SetPoint=value;   
